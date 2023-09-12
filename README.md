@@ -18,9 +18,11 @@
     <p>Para implementar a solução você precisará dos seguintes componentes que estão distribuídos em duas etapas, são elas a etapa física e virtual. Para a etapa física, será necessário:
       <ol>Um módulo Leitor RFID-RC522, será adicionado a farol que precisa ser alterado;</ol>
       <ol>Um cartão RFID, acoplado na ambulância, ele carrega o ID para ser identificado pelo leitor;</ol>
-      <ol>Um microcontrolador ESP32, responsável guardar as informações e consegui-lás transmitir via processo MQTT.</ol> 
+      <ol>Um microcontrolador ESP32, responsável guardar as informações e consegui-lás transmitir via processo MQTT;</ol> 
+      <ol>O LED AZUL, nesse protótipo será o led da placa do próprio ESP32.</ol>
+      <p>Tendo esses componentes, basta seguir a foto abaixo da montagem e utilizando Arduino IDE, pegar o código disponibilizado nesse repositório e gravar no microcontrolador ESP32.</p>
     <p> A segunda etapa é após o microcontrolador enviar os dados via MQTT, para essa etapa, utilizamos uma plataforma chamada fiware.</p>
-   <p>Primeiramente, para a utilização desse software, é necessário alguns pré-requisitos, o primeiro é uma VirtualMachine(VM), a qual simulará Linux, nesse caso o Ubuntu. Dentro da máquina, realiza-se a instalação de ferramentas que facilitam criação, o gerenciamento e a execução de contêineres de aplicativos que serão usados nessa parte do projeto, por último realiza-se a instação do Fiware, agora mais profundamente, é uma plataforma aberta de código destinados a operação como back-end, com o intuito de facilitar as aplicações para smart cities(cidades inteligentes), Inthernet of Things(IoT ou internet das coisas) e sistemas baseados em dados contextuas em tempo real, tudo que condiz com o propósito da solução.Essa plataforma fornece um conjunto APIs (Interfaces de Programação de Aplicativos) e ferramentas que simplificam a criação de soluções inovadoras para melhorar a qualidade de vida nas cidades e impulsiona a transformação digital em diversos setores. </p>
+   <p>Primeiramente, para a utilização desse software, é necessário alguns pré-requisitos, o primeiro é uma máquina virtual VirtualMachine(VM), a qual simulará um sistema Linux, nesse caso o Ubuntu. Dentro da máquina, realiza-se a instalação de ferramentas que facilitam criação, o gerenciamento e a execução de contêineres de aplicativos que serão usados nessa parte do projeto, por último realiza-se a instação do Fiware, agora mais profundamente, é uma plataforma aberta de código destinados a operação como back-end, com o intuito de facilitar as aplicações para smart cities(cidades inteligentes), Inthernet of Things(IoT ou internet das coisas) e sistemas baseados em dados contextuas em tempo real, tudo que condiz com o propósito da solução.Essa plataforma fornece um conjunto APIs (Interfaces de Programação de Aplicativos) e ferramentas que simplificam a criação de soluções inovadoras para melhorar a qualidade de vida nas cidades e impulsiona a transformação digital em diversos setores. </p>
 
   <h3>Instação da máquina virtual</h3>
     <p>A princípio, os requisitos de hardware para essa etapa são:</p>
@@ -28,10 +30,17 @@
    <ol>Núcleos de Processamento - **1vCPU**</ol>
    <ol>Memória RAM - **1GB** </ol>
    <ol>Armazenamento Secundário Mínimo - **20GB HD e/ou SSD**</ol>
-     <p>Tendo essa etapa concluída, primeiro passo é entrar nesse <a href="https://www.virtualbox.org">site</a> e clicar no botão download, para fazer a instação da máquina virtual, no nosso caso a VirtualBox. O próximo é instalar o programa que usaremos, nesse caso o Ubuntu versão 22.04lts, nesse <a href="https://ubuntu.com/download/server">site</a>. O terceiro passo é criar e configurar a máquina, basta clicar no botão "novo" dentro do virtuaBox, em sequência dê o nome "ubuntu" a sua máquina, e clique em próximo até finalizar. Finalizado, marque a máquina criada e selecione a opção "configurações", nesse momento vá em armazenamento e do lado direito estará uma aba para adicionar o arquivo ubuntu que você baixou, após isso só iniciar a máquina e realizar as configuralções iniciais de usuário.</p>
-     <p>A primeira etapa após abrir o sistema Linux é abrir o terminar para fazermos as confugrações 
-   <p>A plataforma consta com uns componentes complementares, são eles:</p>
-  
+     <p>Tendo essa etapa concluída, primeiro passo é entrar nesse <a href="https://www.virtualbox.org">site</a> e clicar no botão download para fazer a instação da máquina virtual, no nosso caso a VirtualBox. O próximo é instalar o programa que usaremos, nessa situação, o Ubuntu versão 22.04lts, nesse <a href="https://ubuntu.com/download/server">site</a>. O terceiro passo é criar e configurar a máquina, basta clicar no botão "novo" dentro do VirtualBox, em sequência dê o nome "ubuntu" a sua máquina, e clique em próximo até finalizar. Finalizado, marque a máquina criada e selecione a opção "configurações", nesse momento vá em armazenamento e do lado direito estará uma aba para adicionar o arquivo ubuntu que você baixou, após isso só iniciar a máquina e realizar as configuralções iniciais de usuário.</p>
+  <h4>Inicialização</h4>
+    <p>A primeira etapa após abrir o sistema Linux é abrir o terminal, feito isso, é preciso fazer a instalação de uma ferramenta chamada docker compose que faciliata a criação, gerenciamento e execução de contêiners de aplicativos, para isso, clique <a href="https://docs.docker.com/engine/install/ubuntu/"> aqui</a> e siga as instruções. Conluída essa etapa, seguimos para a instalação e inicialização do Fiware, faça esses comandos no terminal:</p>
+      <ol> git clone https://github.com/Rodrigo-Brasileiro/Sprint3edge - para copiar todos os arquivos disponíveis nesse repositório </ol>
+      <ol> cd fiware - para entrar na pasta fiware </ol>
+      <ol> docker compose up -d - para abrir as portas do fiware </ol>
+    <p>Nesse instante, vamos verificar se está tudo correto com as portas abertas, para isso, vamos no site <a href="https://www.postman.com">postman</a> que é site de suporte de API que usaremos como comunicador e receptor de respostas do ESP32, crie uma conta e um "my workspace", jogue os arquivos do repositório desse github, vá na pasta 1.1, crie uma variável chamada url com seu enderço de IP e clique em send, com a resposta OK, a porta está saúdavel.</p>
+    <p> Agora, basta testar o programa enviando e solicitando informações com as portas 17 e 18. Quando finalizar o programa, para fechar as portas, basta escrever o comando: docker compose down</p>
+
+  <h3>Componentes Complementares</h3>
+   <p>A plataforma do Fiware conta com componentes complementares que vale a pena serem comentados, são eles:</p>
   <h4>Orion Context Broker </h4>
   
   <p>Orion Context Broker é responsável gestão de contextos, que envolve a coleta, armazenamento e disponibilização de informações contextuais relevantes, como dados de sensores, informações de localização e estados de dispositivos, ou seja, útil para gestão das tagid. </p>
@@ -43,11 +52,6 @@
    <h4>Eclipse-Mosquitto</h4>
    
    <p>O Eclipse Mosquitto é um broker MQTT usado na plataforma FIWARE para facilitar a troca de mensagens entre dispositivos IoT e outros componentes. Ele suporta recursos de autenticação, segurança e controle de acesso, fornecendo uma solução escalável e configurável para a comunicação MQTT na plataforma FIWARE. Os dados são armazenados no tópico TEF (Telemetria e Monitoramento de Equipamentos).</p>
-
-   
-   <p>Para a instalação e configuração do Fiware, sugerimos o documento no link 1 das referências.</p>
-   
-   <p>Para a instalação e configuração de VM e Ubuntu, sugerimos os links 2 e 3 das referências</p>  
    
    <h3>Arquitetura da solução:</h3>
    
@@ -57,14 +61,13 @@
    <h2>Tecnologia usada e como iniciar o projeto</h2>
    <ol>Para esse projeto, utilizamos a IDE do arduino para programar o ESP32, desse modo, toda a linguagem é em c++. já para a aplicação do Fiware, ela é toda configurada em python;</ol>
    <ol>Para toda a configuração do RFID, utilizamos a biblioteca disponível na IDE do arduino MFRC522, após a instalação da biblioteca, basta utilizar o códigos que disponibilizamos e gravar o código no ESP.</ol>
-   <ol>Em seguida, ligue sua máquina virtual e estebeleça os passos do Fiware e teste o programa.</ol>
+   <ol>Em seguida, ligue sua máquina virtual e estebeleça os passos do Fiware e teste o programa como supracitado.</ol>
 
 
  <h3>Referências</h3>
- <p>As nossas referências foram</p>
+ <p>Buscando mais informações e aprimoramento, nossas referências foram:</p>
      <ol><li>Link: https://github.com/fabiocabrini/fiware</li>
          <li>Link: https://www.youtube.com/watch?v=nyWI3xl_LUA </li>
          <li>Link: https://www.youtube.com/watch?v=-djV2392b-s </li>
-         <li>Link: https://www.brasildefato.com.br/2019/06/06/por-que-o-samu-demora-tanto-na-capital-paulista#:~:text=De%20acordo%20com%20dados%20fornecidos,pode%20chegar%20a%20duas%20horas </li>
-         <li>Link: https://g1.globo.com/pa/santarem-regiao/noticia/falta-de-preferencia-dificulta-passagem-de-ambulancias-do-samu-em-santarem.ghtml</li>
+        <li> Link: https://www.fernandok.com/2018/02/esp32-com-rfid-controle-de-acesso.html</li>
      </ol>
