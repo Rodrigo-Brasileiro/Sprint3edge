@@ -9,19 +9,28 @@
   
   <p>Algumas medidas para ajudar já foram impostas, entretanto, não são suficientes para concientização da população, de acordo com o Código de Trânsito Brasileiro (CTB), o condutor que deixar de dar passagem aos veículos de emergência que estão em serviço comete infração gravíssima, com sete pontos na Carteira Nacional de Habilitação (CNH) e recebe multa de R$ 293 e caso alguém siga a ambulância para tentar alguma vantagem, o CTB possui multa que previne tal atitude, em conformidade com a fala de Daniel Mota, instrutor de trânsito, "Todo condutor, ao observar uma viatura, seja do Samu, dos Bombeiros, da polícia e fiscalização, que ceda passagem. O CTB é muito claro quando epedifica essa questão". Pensando nessa fala que criou-se a solução para a problemática </p>
   
+  <p>Click <a href="https://www.brasildefato.com.br/2019/06/06/por-que-o-samu-demora-tanto-na-capital-paulista#:~:text=De%20acordo%20com%20dados%20fornecidos,pode%20chegar%20a%20duas%20horas](https://g1.globo.com/pa/santarem-regiao/noticia/falta-de-preferencia-dificulta-passagem-de-ambulancias-do-samu-em-santarem.ghtml)"> aqui </a> para saber mais sobre a falta de preferência de ambulâncias.</p>
+  <p>Click <a href="https://www.brasildefato.com.br/2019/06/06/por-que-o-samu-demora-tanto-na-capital-paulista#:~:text=De%20acordo%20com%20dados%20fornecidos,pode%20chegar%20a%20duas%20horas">aqui</a> para obter mais informações sobre a demora do SAMU na capital paulista. </p>  
 <h2>Solução:</h2>
  <p>O Objetivo da solução é conseguir identificar uma ambulância a caminho de um semáforo e, caso esteja perto, abrir o corredor de ambulância com um LED AZUL. Pensando nisso, a nossa empresa, Tech Pulse Global Network, desenvolveu um sistema baseado na utilização de uma Tag id, um dispositivo que usado para rastrear ou identificar objetos (nesse caso a ambulância), junto com um microcontrolador ESP32. Desse modo, resumidamente quando uma ambulância se aproxima, envia o sinal da sua tag com um ID(ID=ambulancia) ao ESP32, em sequência, o mesmo envia os dados da tag via processo Message Queuing Telemetry Transport(MQTT), que é um protocolo de comunicação leve e eficiente projetado para troca de mensagens em redes com largura de banda limitada ao Fiware(plataforma com aplicação que verifica o ID) que retorna um valor de saída, ou seja, decindindo se abre ou não o corredor da ambulância.</p>
   
   <h3>Componentes</h3>
-  <p>Para implementar a solução você precisará dos seguintes componentes que estão distribuídos em duas etapas, são elas a etapa física e virtual. Para a etapa física, será necessário:
+    <p>Para implementar a solução você precisará dos seguintes componentes que estão distribuídos em duas etapas, são elas a etapa física e virtual. Para a etapa física, será necessário:
       <ol>Um módulo Leitor RFID-RC522, será adicionado a farol que precisa ser alterado;</ol>
       <ol>Um cartão RFID, acoplado na ambulância, ele carrega o ID para ser identificado pelo leitor;</ol>
       <ol>Um microcontrolador ESP32, responsável guardar as informações e consegui-lás transmitir via processo MQTT.</ol> 
-   <p> A segunda etapa é após o microcontrolador enviar os dados via MQTT, para essa etapa, utilizamos uma plataforma chamada fiware.</p>
-  
-  <p>Primeiramente, para a utilização desse software, é necessário alguns pré-requisitos, o primeiro é uma VirtualMachine(VM), a qual simulará Linux, nesse caso o Ubuntu. Dentro da máquina, realiza-se a instalação de ferramentas que facilitam criação, o gerenciamento e a execução de contêineres de aplicativos que serão usados nessa parte do projeto, por último realiza-se a instação do Fiware, agora mais profundamente, é uma plataforma aberta de código destinados a operação como back-end, com o intuito de facilitar as aplicações para smart cities(cidades inteligentes), Inthernet of Things(IoT ou internet das coisas) e sistemas baseados em dados contextuas em tempo real, tudo que condiz com o propósito da solução.Essa plataforma fornece um conjunto APIs (Interfaces de Programação de Aplicativos) e ferramentas que simplificam a criação de soluções inovadoras para melhorar a qualidade de vida nas cidades e impulsiona a transformação digital em diversos setores. </p>
-  
-  <p>A plataforma consta com uns componentes complementares, são eles:</p>
+    <p> A segunda etapa é após o microcontrolador enviar os dados via MQTT, para essa etapa, utilizamos uma plataforma chamada fiware.</p>
+   <p>Primeiramente, para a utilização desse software, é necessário alguns pré-requisitos, o primeiro é uma VirtualMachine(VM), a qual simulará Linux, nesse caso o Ubuntu. Dentro da máquina, realiza-se a instalação de ferramentas que facilitam criação, o gerenciamento e a execução de contêineres de aplicativos que serão usados nessa parte do projeto, por último realiza-se a instação do Fiware, agora mais profundamente, é uma plataforma aberta de código destinados a operação como back-end, com o intuito de facilitar as aplicações para smart cities(cidades inteligentes), Inthernet of Things(IoT ou internet das coisas) e sistemas baseados em dados contextuas em tempo real, tudo que condiz com o propósito da solução.Essa plataforma fornece um conjunto APIs (Interfaces de Programação de Aplicativos) e ferramentas que simplificam a criação de soluções inovadoras para melhorar a qualidade de vida nas cidades e impulsiona a transformação digital em diversos setores. </p>
+
+  <h3>Instação da máquina virtual</h3>
+    <p>A princípio, os requisitos de hardware para essa etapa são:</p>
+
+   <ol>Núcleos de Processamento - **1vCPU**</ol>
+   <ol>Memória RAM - **1GB** </ol>
+   <ol>Armazenamento Secundário Mínimo - **20GB HD e/ou SSD**</ol>
+     <p>Tendo essa etapa concluída, primeiro passo é entrar nesse <a href="https://www.virtualbox.org">site</a> e clicar no botão download, para fazer a instação da máquina virtual, no nosso caso a VirtualBox. O próximo é instalar o programa que usaremos, nesse caso o Ubuntu versão 22.04lts, nesse <a href="https://ubuntu.com/download/server">site</a>. O terceiro passo é criar e configurar a máquina, basta clicar no botão "novo" dentro do virtuaBox, em sequência dê o nome "ubuntu" a sua máquina, e clique em próximo até finalizar. Finalizado, marque a máquina criada e selecione a opção "configurações", nesse momento vá em armazenamento e do lado direito estará uma aba para adicionar o arquivo ubuntu que você baixou, após isso só iniciar a máquina e realizar as configuralções iniciais de usuário.</p>
+     <p>A primeira etapa após abrir o sistema Linux é abrir o terminar para fazermos as confugrações 
+   <p>A plataforma consta com uns componentes complementares, são eles:</p>
   
   <h4>Orion Context Broker </h4>
   
