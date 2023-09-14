@@ -20,8 +20,8 @@
       <ol>Um cartão RFID, acoplado na ambulância, ele carrega o ID para ser identificado pelo leitor;</ol>
       <ol>Um microcontrolador ESP32, responsável guardar as informações e consegui-lás transmitir via processo MQTT;</ol> 
       <ol>O LED AZUL, nesse protótipo será o led da placa do próprio ESP32.</ol>
-      <p>Tendo esses componentes, basta seguir a foto abaixo da montagem e utilizando Arduino IDE, pegar o código disponibilizado nesse repositório e gravar no microcontrolador ESP32.</p>
-    <p> A segunda etapa é após o microcontrolador enviar os dados via MQTT, para essa etapa, utilizamos uma plataforma chamada fiware.</p>
+      <p>Tendo esses componentes, basta seguir a foto da montagem disponibilizda nos arquivos e utilizando Arduino IDE, pegar o código disponibilizado nesse repositório e gravar no microcontrolador ESP32.</p>
+      <p> A segunda etapa é após o microcontrolador enviar os dados via MQTT, para essa etapa, utilizamos uma plataforma chamada fiware.</p>
    <p>Primeiramente, para a utilização desse software, é necessário alguns pré-requisitos, o primeiro é uma máquina virtual VirtualMachine(VM), a qual simulará um sistema Linux, nesse caso o Ubuntu. Dentro da máquina, realiza-se a instalação de ferramentas que facilitam criação, o gerenciamento e a execução de contêineres de aplicativos que serão usados nessa parte do projeto, por último realiza-se a instação do Fiware, agora mais profundamente, é uma plataforma aberta de código destinados a operação como back-end, com o intuito de facilitar as aplicações para smart cities(cidades inteligentes), Inthernet of Things(IoT ou internet das coisas) e sistemas baseados em dados contextuas em tempo real, tudo que condiz com o propósito da solução.Essa plataforma fornece um conjunto APIs (Interfaces de Programação de Aplicativos) e ferramentas que simplificam a criação de soluções inovadoras para melhorar a qualidade de vida nas cidades e impulsiona a transformação digital em diversos setores. </p>
 
   <h3>Instação da máquina virtual</h3>
