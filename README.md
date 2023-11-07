@@ -19,7 +19,8 @@
       <ol>Um módulo Leitor RFID-RC522, será adicionado a farol que precisa ser alterado;</ol>
       <ol>Um cartão RFID, acoplado na ambulância, ele carrega o ID para ser identificado pelo leitor;</ol>
       <ol>Um microcontrolador ESP32, responsável guardar as informações e consegui-lás transmitir via processo MQTT;</ol> 
-      <ol>O LED AZUL, nesse protótipo será o led da placa do próprio ESP32.</ol>
+      <ol>O LED AZUL, nesse protótipo será o led da placa do próprio ESP32;</ol>
+      <ol>Dois modulos de semáforo, eles são preciso para simular um cruzamento e conseguir ver com maior eficácia o intuito da solução.</ol>
       <p>Tendo esses componentes, basta seguir a foto da montagem disponibilizda nos arquivos e utilizando Arduino IDE, pegar o código disponibilizado nesse repositório e gravar no microcontrolador ESP32.</p>
       <p> A segunda etapa é após o microcontrolador enviar os dados via MQTT, para essa etapa, utilizamos uma plataforma chamada fiware.</p>
    <p>Primeiramente, para a utilização desse software, é necessário alguns pré-requisitos, o primeiro é uma máquina virtual VirtualMachine(VM), a qual simulará um sistema Linux, nesse caso o Ubuntu. Dentro da máquina, realiza-se a instalação de ferramentas que facilitam criação, o gerenciamento e a execução de contêineres de aplicativos que serão usados nessa parte do projeto, por último realiza-se a instação do Fiware, agora mais profundamente, é uma plataforma aberta de código destinados a operação como back-end, com o intuito de facilitar as aplicações para smart cities(cidades inteligentes), Inthernet of Things(IoT ou internet das coisas) e sistemas baseados em dados contextuas em tempo real, tudo que condiz com o propósito da solução.Essa plataforma fornece um conjunto APIs (Interfaces de Programação de Aplicativos) e ferramentas que simplificam a criação de soluções inovadoras para melhorar a qualidade de vida nas cidades e impulsiona a transformação digital em diversos setores. </p>
@@ -59,15 +60,16 @@
 
    
    <h2>Tecnologia usada e como iniciar o projeto</h2>
+   
    <ol>Para esse projeto, utilizamos a IDE do arduino para programar o ESP32, desse modo, toda a linguagem é em c++. já para a aplicação do Fiware, ela é toda configurada em python;</ol>
-   <ol>Para toda a configuração do RFID, utilizamos a biblioteca disponível na IDE do arduino MFRC522, após a instalação da biblioteca, basta utilizar o códigos que disponibilizamos e gravar o código no ESP.</ol>
+   <ol>Para toda a configuração do RFID, utilizamos a biblioteca disponível na IDE do arduino MFRC522 e para configurar o sistema a internet e protocolo mqtt utilizamos a biblioteca PubSubClient. Terminado isso basta utilizar o códigos que disponibilizamos e gravar o código no ESP32.</ol>
    <ol>Em seguida, ligue sua máquina virtual e estebeleça os passos do Fiware e teste o programa como supracitado.</ol>
    <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/blob/main/fiware/montagemRFID.jpg">aqui </a> para acessar a foto para realizar a montagem do leitor rfid </p>
 
   <h3>Dashboard para análise:</h3>
   <p>No intuito de deixar mais fácil a compreensão das leituras dos dados, foi criado um dashboard em python, o qual tem diversas funções, como a identificação de novas ambulâncias, porcentagem de passagem(o quanto cada ambulância passou) e quantos carros de emergência passaram em seu total.</p>
   
-   
+  <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/tree/main/DASHBOARD">aqui </a> para acessar o código do dashboard em python. Para utiliza-lá, basta baixar os arquivos e os executar em um ambiente apropriado, como Visual Studio Code. </
 
 
  <h3>Referências</h3>
