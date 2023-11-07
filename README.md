@@ -38,7 +38,7 @@
       <ol> cd fiware - para entrar na pasta fiware </ol>
       <ol> docker compose up -d - para abrir as portas do fiware </ol>
     <p>Nesse instante, vamos verificar se está tudo correto com as portas abertas, para isso, vamos no site <a href="https://www.postman.com">postman</a> que é site de suporte de API que usaremos como comunicador e receptor de respostas do ESP32, crie uma conta e um "my workspace", jogue os arquivos do repositório desse github, vá na pasta 1.1, crie uma variável chamada url com seu enderço de IP e clique em send, com a resposta OK, a porta está saúdavel.</p>
-    <p> Agora, basta testar o programa enviando e solicitando informações com as portas 17 e 18. Quando finalizar o programa, para fechar as portas, basta escrever o comando: docker compose down</p>
+    <p> Agora, basta testar o programa, primeiramente precisa criar na porta 3 sua varíavel, terminado isso, basta ligar o esp32 enviando dados e solicitá-los com a portas 17. Quando finalizar o programa, para fechar as portas, basta escrever o comando: docker compose down</p>
 
   <h3>Componentes Complementares</h3>
    <p>A plataforma do Fiware conta com componentes complementares que vale a pena serem comentados, são eles:</p>
@@ -64,7 +64,7 @@
    <ol>Para esse projeto, utilizamos a IDE do arduino para programar o ESP32, desse modo, toda a linguagem é em c++. já para a aplicação do Fiware, ela é toda configurada em python;</ol>
    <ol>Para toda a configuração do RFID, utilizamos a biblioteca disponível na IDE do arduino MFRC522 e para configurar o sistema a internet e protocolo mqtt utilizamos a biblioteca PubSubClient. Terminado isso basta utilizar o códigos que disponibilizamos e gravar o código no ESP32.</ol>
    <ol>Em seguida, ligue sua máquina virtual e estebeleça os passos do Fiware e teste o programa como supracitado.</ol>
-   <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/blob/main/fiware/montagemRFID.jpg">aqui </a> para acessar a foto para realizar a montagem do leitor rfid </p>
+   <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/blob/main/montagemRFID.jpg">aqui </a> para acessar a foto para realizar a montagem do leitor rfid </p>
 
   <h3>Dashboard para análise:</h3>
   <p>No intuito de deixar mais fácil a compreensão das leituras dos dados, foi criado um dashboard em python, o qual tem diversas funções, como a identificação de novas ambulâncias, porcentagem de passagem(o quanto cada ambulância passou) e quantos carros de emergência passaram em seu total.</p>
