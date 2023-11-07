@@ -47,6 +47,11 @@
   
   <p>Orion Context Broker é responsável gestão de contextos, que envolve a coleta, armazenamento e disponibilização de informações contextuais relevantes, como dados de sensores, informações de localização e estados de dispositivos, ou seja, útil para gestão das tagid. </p>
   
+  <h4>STH Comet</h4>
+   <p>O STH-Comet, uma parte essencial da plataforma FIWARE, desempenha um papel fundamental na preservação em grande escala de informações contextuais passadas. Sua colaboração com o Orion Context Broker permite a captura, armazenamento e consulta eficientes de dados       históricos. Com capacidades avançadas, como o armazenamento otimizado de séries temporais e a realização de consultas agregadas e de séries temporais, o STH-Comet oferece uma interface RESTful para a interação, permitindo aos desenvolvedores acessar e analisar           dados passados de maneira ágil. Em suma, o STH-Comet simplifica o armazenamento e a recuperação de informações contextuais históricas na estrutura FIWARE.</p>
+   <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/blob/main/sth-comet-architecture.png">aqui </a> para compreender melhor sobre o funcionamento do sthcomet. </p>
+   
+  
   <h4>MongoDB</h4>
   
   <p>O MongoDB é um sistema de banco de dados NoSQL usado na plataforma FIWARE para armazenar dados contextuais provenientes do Orion Context Broker e de outros componentes. Ele suporta documentos JSON flexíveis, possui recursos avançados para consultas e escalabilidade horizontal, tornando-o adequado para lidar com grandes volumes de dados na plataforma FIWARE.</p>
