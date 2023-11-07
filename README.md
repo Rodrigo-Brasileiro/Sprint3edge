@@ -1,4 +1,4 @@
-# Sprint3edge
+# Sprint4edge
 ![logogs-removebg-preview](https://github.com/Rodrigo-Brasileiro/caseHeinz/assets/126472820/2cd126f6-513e-4762-bfc2-2e14e4d12019)
 
 <h2>Problema:</h2>
