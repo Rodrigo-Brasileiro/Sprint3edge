@@ -62,6 +62,12 @@
    <ol>Para esse projeto, utilizamos a IDE do arduino para programar o ESP32, desse modo, toda a linguagem é em c++. já para a aplicação do Fiware, ela é toda configurada em python;</ol>
    <ol>Para toda a configuração do RFID, utilizamos a biblioteca disponível na IDE do arduino MFRC522, após a instalação da biblioteca, basta utilizar o códigos que disponibilizamos e gravar o código no ESP.</ol>
    <ol>Em seguida, ligue sua máquina virtual e estebeleça os passos do Fiware e teste o programa como supracitado.</ol>
+   <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/blob/main/fiware/montagemRFID.jpg">aqui </a> para acessar a foto para realizar a montagem do leitor rfid </p>
+
+  <h3>Dashboard para análise:</h3>
+  <p>No intuito de deixar mais fácil a compreensão das leituras dos dados, foi criado um dashboard em python, o qual tem diversas funções, como a identificação de novas ambulâncias, porcentagem de passagem(o quanto cada ambulância passou) e quantos carros de emergência passaram em seu total.</p>
+  
+   
 
 
  <h3>Referências</h3>
