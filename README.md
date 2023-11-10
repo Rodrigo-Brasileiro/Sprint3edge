@@ -67,16 +67,23 @@
    
    <h2>Tecnologia usada e como iniciar o projeto</h2>
    
-   <ol>Para esse projeto, utilizamos a IDE do arduino para programar o ESP32, desse modo, toda a linguagem é em c++. já para a aplicação do Fiware, ela é toda configurada em python;</ol>
-   <ol>Para toda a configuração do RFID, utilizamos a biblioteca disponível na IDE do arduino MFRC522 e para configurar o sistema a internet e protocolo mqtt utilizamos a biblioteca PubSubClient. Terminado isso basta utilizar o códigos que disponibilizamos e gravar o código no ESP32.</ol>
+   <ol>Para esse projeto, utilizamos a IDE do arduino para programar o ESP32, desse modo, toda a linguagem é em c++. Entretanto, primeiramente é preciso instalar o pacote do ESP32 da espressif, seguindo <a herf="https://www.youtube.com/watch?v=Ozr1SXwir9g">esse</a> tutorial. Agora para a aplicação do Fiware, ela é toda configurada em python, abordada no tópico seguinde;</ol>
+   <ol>Para toda a configuração do RFID, utilizamos as bibliotecas disponíveis na IDE do arduino, MFRC522 ( by github community)  e para configurar o sistema a internet e protocolo mqtt utilizamos a biblioteca PubSubClient(by nick o'lary). Terminado isso basta utilizar o códigos que disponibilizamos e gravar o código no ESP32.</ol>
    <ol>Em seguida, ligue sua máquina virtual e estebeleça os passos do Fiware e teste o programa como supracitado.</ol>
    <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/blob/main/montagemRFID.jpg">aqui </a> para acessar a foto para realizar a montagem do leitor rfid </p>
-
+   <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/blob/main/codigoESP32/codigoSPRINT4.ino">aqui</a> para visualizar o código do ESP32.</p>
   <h3>Dashboard para análise:</h3>
   <p>No intuito de deixar mais fácil a compreensão das leituras dos dados, foi criado um dashboard em python, o qual tem diversas funções, como a identificação de novas ambulâncias, porcentagem de passagem(o quanto cada ambulância passou) e quantos carros de emergência passaram em seu total.</p>
   
   <p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/tree/main/DASHBOARD">aqui </a> para acessar o código do dashboard em python. Para utiliza-lá, basta baixar os arquivos e os executar em um ambiente apropriado, como Visual Studio Code. </
 
+![image](https://github.com/Rodrigo-Brasileiro/Sprint3edge/assets/126472820/47ef8be8-23c3-445a-abc8-9b1044b6184e)
+![image](https://github.com/Rodrigo-Brasileiro/Sprint3edge/assets/126472820/c80f31a4-bab1-4ea5-a06e-d65eba9f9510)
+
+<h3>Aplicativo para Socorristas</h3>
+<p>Ademais do dashboard em python, foi criado um site simula a interface de um aplicativo de rotas para veículos de emergências. Nele, é utilizado sistema GPS para verificação da localização do usuário até o hospital. Esse aplicativo é utilizado por socorristas para chegar até o local da ocorrência ou do hospital mais rapidamente. Além disso, é possível também enviar um diagnóstico prévio ao hospital para agilizar o atendimento do paciente, onde será informado os sintomas e procedimentos realizados na ocorrência. Para sua aplicação, basta pacotes React-router-dom, Styled Componentes, bootstrap, react-bootstrap e Sass pelo próprio VS code, por basta último executar o código.</p>
+
+<p>Clique <a href="">aqui</a> para acessar o site.</p>
 
  <h3>Referências</h3>
  <p>Buscando mais informações e aprimoramento, nossas referências foram:</p>
