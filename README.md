@@ -83,8 +83,8 @@
 <h3>Aplicativo para Socorristas</h3>
 <p>Ademais do dashboard em python, foi criado um site simula a interface de um aplicativo de rotas para veículos de emergências. Nele, é utilizado sistema GPS para verificação da localização do usuário até o hospital. Esse aplicativo é utilizado por socorristas para chegar até o local da ocorrência ou do hospital mais rapidamente. Além disso, é possível também enviar um diagnóstico prévio ao hospital para agilizar o atendimento do paciente, onde será informado os sintomas e procedimentos realizados na ocorrência. Para sua aplicação, basta pacotes React-router-dom, Styled Componentes, bootstrap, react-bootstrap e Sass pelo próprio VS code, por basta último executar o código.</p>
 
-<p>Clique <a href="ambuzone-tpgn.netlify.app">aqui</a> para acessar o site.</p>
-<p>Clique <a href="https://github.com/Rodrigo-Brasileiro/Sprint3edge/tree/main/ambuzone-sprint4/ambuzone"</a> para acessar os arquivos para reprodução do site.</p>
+<p>Acesse esse link "ambuzone-tpgn.netlify.app" para acessar o site.</p>
+<p>Clique <a href= "https://github.com/Rodrigo-Brasileiro/Sprint3edge/tree/main/ambuzone-sprint4/ambuzone">aqui</a> para acessar os arquivos para reprodução do site.</p>
 
  <h3>Referências</h3>
  <p>Buscando mais informações e aprimoramento, nossas referências foram:</p>
