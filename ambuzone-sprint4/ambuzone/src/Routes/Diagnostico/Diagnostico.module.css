@@ -1,0 +1,142 @@
+body {
+    background-color: #020d3f;
+    color: white;
+    height: 100vh;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap ;
+    margin: 20px;
+    padding-bottom: 30px;
+}
+
+.form {
+    margin-top: -50px;
+    background-color: #020D3F;
+    max-width: 270px;
+    height: 70vh;
+    border-radius: 50px;
+    border: 1.5px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    
+
+}
+
+label {
+    font-size: 22px;
+    font-weight: bold;
+
+}
+
+span {
+    font-size: 22px;
+}
+
+.dados, .sintomas, .procedimento, .obs, .risco {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.risco label{
+    width: 300px;
+}
+
+.dadosinput {
+    width: 220px;
+    height: 30px;
+    border: 1px solid #020D3F;
+}
+
+.sintomasinput, .procedimentoinput, .obsinput {
+    width: 220px;
+    height: 50px;
+}
+
+.naourgente, .poucourgente, .urgente, .muitourgente, .emergencia{
+    width: 30px;
+}
+
+/* Estilize o input radio ocultando-o e definindo estilos para o rótulo */
+/* Estilize o input radio ocultando-o */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilize o rótulo antes de o usuário clicar no input de rádio */
+input[type="radio"] + label {
+    color: #fff;
+    background-color: #020d3f;
+    padding: 5px 10px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Estilize o input de rádio quando estiver marcado (selecionado) */
+
+
+.naourgente:checked + label {
+    background-color: blue;
+}
+
+.poucourgente:checked + label {
+    background-color: green;
+}
+
+.urgente:checked + label {
+    background-color: yellow;
+}
+
+.muitourgente:checked + label {
+    background-color: orange;
+}
+
+.emergencia:checked + label {
+    background-color: red;
+}
+
+.btn {
+    width: 160px;
+    height: 30px;
+    border-radius: 50px;
+    outline: none;
+    background-color: #3a3a3a;
+    border: 1px solid white;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.errospan {
+    color: red;
+    display: block;
+    font-size: 14px;
+
+}
+
+.erroinput {
+    border: 3px solid red;
+}
+
+.certoinput {
+    border: 3px solid green;
+}
+
+.spanescondido {
+    font-size: 14px;
+    display: none;
+}

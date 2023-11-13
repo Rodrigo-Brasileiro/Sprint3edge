@@ -1,0 +1,214 @@
+@import "../../styles/variaveis";
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.container-login {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-template-rows: repeat(auto, 100px);
+
+    .box-azul{
+        grid-template-columns: 1/13;
+        grid-row: 1/2;
+        width: 97vw;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 2.5rem;
+
+        p{
+            font-size: 2rem;
+            margin-bottom: -1rem;
+            text-align: left;
+            width: 90vw;
+        }
+
+    }
+    
+    .box-branca{
+        grid-column: 1/13;
+        grid-row: 3/5;
+        border: $border_white;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        align-items: center;
+        height: 82vh;
+        border-top-right-radius: 3rem;
+        border-top-left-radius: 3rem;
+        padding: 2rem;
+
+        .titulo{
+            font-size: 4rem;
+            font-weight: bold;
+            // width: 45rem;
+            // grid-row: 4;
+        }
+
+        .form {
+            grid-row: 5;
+            margin-top: -5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 45rem;
+            width: 100%;
+            height: 35rem;
+            background-color: $bg-color_principal;
+            border: $border_white;
+
+            input {
+                max-width: 40rem;
+                width: 100%;
+                align-self: center;
+                font-size: 1.6rem;
+                height: 3rem;
+                border-radius: 3px;
+                outline: none;
+                border: $border_black;
+                box-shadow: 0.3rem 0.3rem rgba(102, 102, 102, 0.562);
+
+                &:hover{
+                    background-color: $input-hover_login;
+                }
+            }
+
+            .frase-cadastro {
+                font-size: 1.6rem;
+                display: flex;
+                justify-content: center;
+                max-width: 450px;
+                width: 100%;
+
+                .cadastro {
+                    color: $txt-color_white;
+                }
+            }
+
+            .usuario {
+                display: flex;
+                flex-direction: column;
+                padding: 2.5rem;
+                justify-content: center;
+
+            }
+
+            .senha {
+                display: flex;
+                flex-direction: column;
+                padding: 2.5rem;
+                justify-content: center;
+                margin-top: -2.5rem;
+                padding-bottom: 0;
+
+            }
+
+            .manter-conectado{
+                display: flex;
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+                max-width: 45rem;
+                width: 100%;
+                justify-content: space-between;
+
+                .checkbox{
+                    display: flex;
+                    align-items: center;
+                    label {
+                        font-size: 1.6rem;
+                        font-weight: lighter;
+                        padding-left: 0.5rem;
+                        margin-top: 0.4rem;
+    
+    
+                    }
+
+                    input[type="checkbox"] {
+                        width: 1.7rem;
+                        height: 1.7rem;
+                        outline: none;
+                        border: $border_black;
+                        box-shadow: 0px 0px;
+
+
+                    }
+                }
+
+                p{
+                    font-size: 1.6rem;
+                }
+
+            }
+
+            .entrar {
+                margin: 2.5rem;
+                height: 3.5rem;
+                border-radius: 1rem;
+                outline: none;
+                border: $border_black;
+                font-size: 2rem;
+                font-weight: bold;
+                box-shadow: 0.3rem 0.3rem rgba(102, 102, 102, 0.562);
+                margin-top: 0rem;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $input-hover_login;
+                }
+            }
+
+            .box-span {
+                max-width: 45rem;
+                width: 100%;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .errospan {
+                color: $txt-color_erro;
+                display: block;
+                font-size: 18px;
+            
+            }
+
+            .spanescondido {
+                font-size: 14px;
+                display: none;
+            }
+
+            .erroinput {
+                border: $border_erro;
+            }
+            
+            .certoinput {
+                border: $border_certo;
+            }
+            
+
+            @media screen and (max-width:440px) {
+                .manter-conectado {
+                    flex-direction: column;
+                    gap: 1rem;
+
+
+                    .checkbox{
+                        align-self: stretch;
+                    }
+                }
+
+                .frase-cadastro  {
+                    margin-top: -2rem;
+                    font-size: 1.2rem;
+                }
+            }
+
+        }
+    }
+    }
+    

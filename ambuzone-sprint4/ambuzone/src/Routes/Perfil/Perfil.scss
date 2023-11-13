@@ -1,0 +1,111 @@
+@import "../../styles/variaveis";
+
+main {
+    background-color: $bg-color_principal;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    color: $txt-color_black;
+        .configuracoes {
+            font-size: 2rem;
+            grid-column: 12;
+            grid-row: 1;
+            align-items: end;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 1rem;
+            right: 1rem;
+            color: $txt-color_white;
+
+        }
+        .conta{
+            width: 18rem;
+            grid-column: 7;
+            grid-row: 1;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // margin-left: 5rem;
+
+                hr{
+                    width: 100%;
+                    margin: 2rem 0;
+                }
+                    .informacoesPessoais{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .fotoPerfil{
+                            width: 6rem;
+                            height: 6rem;
+                            border-radius: 4rem 4rem;
+                            background-color: $bg-color_perfil;
+                            margin-bottom: 1rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 5rem;
+                            color: $txt-color_white;
+                        }
+                            p{
+                                color: $txt-color_white;
+                                font-size: 1.6rem;
+                            }
+        }
+        }
+        .containerOpcoesPerfil{
+            grid-column: 1/13;
+            grid-row: 2;
+            background-color: $bg-color_secundaria;
+            height: 80vh;
+            width: 100%;
+            border-radius: 5rem 5rem 0 0;
+                h1{
+                    margin: 2rem 0 0 3rem;        
+                }
+            .opcoesPerfil{
+                margin: 2rem;
+                    .conteudoOpcoesPerfil{
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 2.8rem;
+                        .descricaoConteudoOpcoesPerfil{
+                            display: flex;
+                            align-items: end;
+                            p{
+                                font-size: 1.5rem;
+                                margin-left: 1rem;
+                            }
+        }
+                a{
+                    color: $txt-color_black;
+                    height: 1rem;
+
+
+                    @media screen and (max-width:300px) {
+                            margin-right: 2rem;
+                    }
+                    
+                    @media screen and (max-width:280px) {
+                            margin-right: 4rem;
+                        
+                    }
+                }
+
+                
+            }
+        }
+        .logout {
+            color: $txt-color_erro;
+            margin-top: 3rem;
+            position: relative;
+            left: -2.5rem;
+            cursor: pointer;
+        }
+    }
+}
